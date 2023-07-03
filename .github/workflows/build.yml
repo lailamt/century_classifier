@@ -1,0 +1,13 @@
+name: executa_exemplos
+
+on: [push,workflow_dispatch]
+
+jobs:
+  executa_exemplos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build container
+        run: docker build -t timestamp_classifier .
+      - name: Build container
+        run: docker run --rm timestamp_classifier python3 timestampclassifier_ex.py

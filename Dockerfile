@@ -7,4 +7,4 @@ RUN python3 -m pip install pandas
 
 COPY . /timestamp_classifier
 
-ENTRYPOINT [ "python3", "timestampclassifier.py" ]
+CMD [ "python3", "timestampclassifier.py", "timestampclassifier_ex.py" ]
