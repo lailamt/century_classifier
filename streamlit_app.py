@@ -1,6 +1,9 @@
+import re
 import streamlit as st
 import pickle
+from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
+from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
 
 def preprocess(text):
@@ -37,10 +40,11 @@ def preprocess(text):
 def predict_text_class(text):
     # Add your code here to use the pre-trained model and predict the class of the text
     # Replace the return statement with your actual prediction
-    filename = path + name
+    filename = 'finalized_model.sav'
     loaded_model = pickle.load(open(filename, 'rb'))
+    vectorizer = TfidfVectorizer()
 
-    return loaded_model.predict(text)[0]
+    return loaded_model.predict(vectorizer.transform([text]))[0]
 
 def main():
     st.title("Text Classification")
