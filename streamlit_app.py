@@ -1,6 +1,7 @@
 import re
 import streamlit as st
 import pickle
+import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
 from nltk.tokenize import word_tokenize
