@@ -4,8 +4,9 @@ import pickle
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
-from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
+nltk.download('punkt')
+from nltk.corpus import stopwords
 
 def preprocess(text):
     stop_words = set(stopwords.words("portuguese"))
@@ -43,7 +44,8 @@ def predict_text_class(text):
     # Replace the return statement with your actual prediction
     filename = 'finalized_model.sav'
     loaded_model = pickle.load(open(filename, 'rb'))
-    vectorizer = TfidfVectorizer()
+    vecname = 'vectorizer.pickle'
+    vectorizer = pickle.load(open(vecname, 'rb'))
 
     return loaded_model.predict(vectorizer.transform([text]))[0]
 
