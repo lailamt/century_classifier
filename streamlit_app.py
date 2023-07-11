@@ -51,16 +51,18 @@ def predict_text_class(text):
     return loaded_model.predict(vectorizer.transform([text]))[0]
 
 def main():
-    st.title("Text Classification")
-    text_input = st.text_input("Enter some text")
+    st.title("Timestamp Classifier")
+    st.write("Timestamp Classifier é um classificador multiclasse de texto que determina a qual período um determinado texto pertence com base em suas características. Foi construído utilizando representação TF-IDF e LinearSVC. Para o treinamento do classificador foi utilizado o Corpus Histórico do Português Tycho Brahe. \n Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do programa de Pós-graduação da Universidade Federal da Bahia. \n Desenvolvido por: Laila Mota <3.")
+    #text_input = st.text_input("Enter some text")
+    text_input = st.text_area("Enter some text")
     submit_button = st.button("Submit")
 
     if submit_button:
         if text_input:
             text_input = preprocess(text_input)
             prediction = predict_text_class(text_input)
-            st.write("Text:", text_input)
-            st.write("Prediction:", prediction)
+            st.write("Preprocessed text:", text_input)
+            st.write("Prediction (century):", prediction)
         else:
             st.write("Please enter some text.")
 
