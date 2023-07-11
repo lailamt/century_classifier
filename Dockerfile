@@ -4,6 +4,7 @@ WORKDIR /timestamp_classifier
 
 RUN python3 -m pip install -U scikit-learn
 RUN python3 -m pip install pandas
+RUN python3 -m pip install nltk
 
 COPY . /timestamp_classifier
 

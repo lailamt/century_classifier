@@ -1,13 +1,12 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.svm import LinearSVC
+import re
+import pickle
+import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
+from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
-
-"""###Open df"""
-
-df = pd.read_csv('corpus_preprocessado.csv')
+nltk.download('punkt')
+from nltk.corpus import stopwords
 
 def preprocess(text):
     stop_words = set(stopwords.words("portuguese"))
@@ -38,23 +37,28 @@ def preprocess(text):
 
     return ' '.join(text)
 
-def train_predict(text):
-    X = df['Text']
-    y = df['Period']
+# Function to predict the class using your pre-trained model
+def predict_text_class(text):
+    # Add your code here to use the pre-trained model and predict the class of the text
+    # Replace the return statement with your actual prediction
+    filename = 'finalized_model.sav'
+    loaded_model = pickle.load(open(filename, 'rb'))
+    vecname = 'vectorizer.pickle'
+    vectorizer = pickle.load(open(vecname, 'rb'))
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
+    return loaded_model.predict(vectorizer.transform([text]))[0]
 
-    vectorizer = TfidfVectorizer()
-    X_train_vectorized = vectorizer.fit_transform(X_train)
-    X_test_vectorized = vectorizer.transform(X_test)
+def main():
+    print("Timestamp Classifier")
+    #text_input = st.text_input("Enter some text")
+    text_input = input("Insira o texto: ")
 
-    svc_model_tfidf = LinearSVC()
-    svc_model_tfidf.fit(X_train_vectorized, y_train)
-
-    return svc_model_tfidf.predict(vectorizer.transform([text]))[0]
+    if text_input:
+        text_input = preprocess(text_input)
+        prediction = predict_text_class(text_input)
+        print("Predição: séc.", prediction)
+    else:
+        print("Favor inserir algum texto.")
 
 if __name__ == "__main__":
-    while True:
-        text = input()
-        text = preprocess(text)
-        print()
+    main()
