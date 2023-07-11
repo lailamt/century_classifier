@@ -57,17 +57,17 @@ def main():
     st.write("Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do programa de Pós-graduação da Universidade Federal da Bahia.")
     st.write("Desenvolvido por: Laila Mota <3.")
     #text_input = st.text_input("Enter some text")
-    text_input = st.text_area("Enter some text")
-    submit_button = st.button("Submit")
+    text_input = st.text_area("Insira o texto abaixo")
+    submit_button = st.button("Classifique!")
 
     if submit_button:
         if text_input:
             text_input = preprocess(text_input)
             prediction = predict_text_class(text_input)
-            st.write("Preprocessed text:", text_input)
-            st.write("Prediction (century):", prediction)
+            st.write("Texto pré-processado:", text_input)
+            st.write("Predição: séc.", prediction)
         else:
-            st.write("Please enter some text.")
+            st.write("Favor inserir algum texto.")
 
 if __name__ == "__main__":
     main()
