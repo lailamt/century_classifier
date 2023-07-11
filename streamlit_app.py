@@ -52,7 +52,10 @@ def predict_text_class(text):
 
 def main():
     st.title("Timestamp Classifier")
-    st.write("Timestamp Classifier é um classificador multiclasse de texto que determina a qual período um determinado texto pertence com base em suas características. Foi construído utilizando representação TF-IDF e LinearSVC. Para o treinamento do classificador foi utilizado o Corpus Histórico do Português Tycho Brahe. \n Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do programa de Pós-graduação da Universidade Federal da Bahia. \n Desenvolvido por: Laila Mota <3.")
+    st.write("Timestamp Classifier é um classificador multiclasse de texto que determina a qual período um determinado texto pertence com base em suas características.")
+    st.write("Foi construído utilizando representação TF-IDF e LinearSVC. Para o treinamento do classificador foi utilizado o Corpus Histórico do Português Tycho Brahe.")
+    st.write("Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do programa de Pós-graduação da Universidade Federal da Bahia.")
+    st.write("Desenvolvido por: Laila Mota <3.")
     #text_input = st.text_input("Enter some text")
     text_input = st.text_area("Enter some text")
     submit_button = st.button("Submit")
