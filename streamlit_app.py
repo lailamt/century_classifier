@@ -66,7 +66,7 @@ def main():
             prediction = predict_text_class(text_input)
             st.write("Texto pré-processado:", text_input)
             st.divider()
-            st.subheader("Predição: séc.", prediction)
+            st.write("Predição: séc.", prediction)
         else:
             st.write("Favor inserir algum texto.")
 
