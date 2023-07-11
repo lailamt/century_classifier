@@ -1,6 +1,8 @@
 # Timestamp Classifier
 
-Timestamp Classifier é um classificador multiclasse de texto que determina a qual período um determinado texto pertence com base em suas características.
+Timestamp Classifier é um classificador multiclasse de texto que determina a qual período um determinado texto pertence com base em suas características. 
+
+O Timestamp Classifier é limitado a classificação de textos entre os séculos XV e XIX.
 
 Foi construído utilizando representação TF-IDF e LinearSVC. Para o treinamento do classificador foi utilizado o Corpus Histórico do Português Tycho Brahe. Utilize apenas com textos em Língua Portuguesa.
 
