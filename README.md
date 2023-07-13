@@ -12,7 +12,7 @@ Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do
 
 ## Streamlit
 
-O classificador também está disponível online através da plataforma Streamlit.io no endereço [Century Classifier](https://centuryclassifier-ic007.streamlit.app), com uma interface bem mais amigável para utilização. Experimente
+O classificador também está disponível online através da plataforma Streamlit.io no endereço [Century Classifier](https://centuryclassifier-icc007.streamlit.app), com uma interface bem mais amigável para utilização. Experimente
 
 ## Uso
 O repositório possui um codespace configurado, caso queira testar o classificador por esse método.
