@@ -49,7 +49,7 @@ def predict_text_class(text):
     return loaded_model.predict(vectorizer.transform([text]))[0]
 
 def main():
-    print("Timestamp Classifier")
+    print("Century Classifier")
     #text_input = st.text_input("Enter some text")
     text_input = input("Insira o texto: ")
 

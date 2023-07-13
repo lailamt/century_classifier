@@ -49,7 +49,7 @@ def predict_text_class(text):
     return loaded_model.predict(vectorizer.transform([text]))[0]
 
 def main():
-    print("Timestamp Classifier")
+    print("Century Classifier")
     #text_input = st.text_input("Enter some text")
     print('sec XV - Garcia de Resende')
     print(predict_text_class("Senhoras não hajais medo não receeis fazer bem tende o coração mui quedo e vossas mercês verão cedo quão grandes bens do bem vem. Não torvem vosso sentido as cousas qu'haveis ouvido porqu'é lei de deos d'amor bem, vertude nem primor nunca jamais ser perdido. Por verdes o galardão que do amor recebeu porque por ele morreu nestas trovas saberão o que ganhou ou perdeu. Não perdeu senão a vida que pudera ser perdida sem na ninguém conhecer e ganhou por bem querer ser sua morte tão sentida."))
