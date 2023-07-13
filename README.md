@@ -6,7 +6,7 @@ O Century Classifier é limitado a classificação de textos entre os séculos X
 
 Foi construído utilizando representação TF-IDF e LinearSVC. Para o treinamento do classificador foi utilizado o Corpus Histórico do Português Tycho Brahe. Utilize apenas com textos em Língua Portuguesa.
 
-A documentação do corpus pode ser encontrada neste repositório no arquivo [Documentação do corpus](https://github.com/lailamt/century_classifier/blob/main/Documenta.txt)
+A documentação do corpus pode ser encontrada neste repositório no arquivo [Documentação do corpus](https://github.com/lailamt/century_classifier/blob/main/Documentação%20do%20corpus.pdf)
 
 Este produto é parte da avaliação da disciplina Tópicos em Banco de Dados do programa de Pós-graduação da Universidade Federal da Bahia.
 
